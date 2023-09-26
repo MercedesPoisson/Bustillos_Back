@@ -34,13 +34,17 @@ const createAppHandler = async(req: Request, res: Response) => {
         "private_access",
     ]
     const result: string|boolean = formBodyCheck(apartmentsArray, req.body)
+    console.log("result:", result);
     const newApp = req.body as ApartmentsAttributes;
         
     const multerArray = req.files as Express.Multer.File[];
     let pathsArray: string[] = [];
     if(multerArray?.length) {
         pathsArray = await Promise.all(multerArray.map(async(obj: Express.Multer.File) => {
+            console.log("multerArray:", multerArray);
+console.log("pathsArray:", pathsArray);
             const uploadResult = await imageUpdate(obj.path);
+            console.log("uploadResult:", uploadResult);
             fs.unlink(obj.path, (err) => {
                 if (err) {
                     console.error("Error deleting local file:", err);

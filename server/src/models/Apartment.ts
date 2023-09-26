@@ -20,7 +20,7 @@ const Apartment = (sequelize: Sequelize) => {
             allowNull: false
         },
         floor: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         room_number: {

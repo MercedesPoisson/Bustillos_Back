@@ -12,6 +12,7 @@ const createAppController = async (
   try {
     const services: string[] | undefined = newApp.services;
     const app: any = await Apartments.create(newApp);
+    console.log("app:", app);
     
     if (services && services.length > 0) {
       const servicesFromDb = await Services.findAll({
