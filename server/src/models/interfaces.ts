@@ -40,19 +40,24 @@ export interface RentsAttributes {
     surname: string
     phone: string
     mail: string
+    cuit_dni: string
     id_apartment: number
     start_date: Date
     end_date: Date
+    nights_number: number
     guests_number: number
     adults_number: number
     kids_number: number
     babies_number: number
-    amount: number
-    pre_viaje: boolean
+    pets: boolean
+    currency: string
     total_amount: number
-    senia: boolean
-    senia_amount: number
-    saldo: number    
+    deposit: number
+    exchange_rate: number
+    deposit_amount: number
+    balance_exchange_rate: number
+    balance: number
+    pre_viaje: boolean
     payment_status: boolean
     payment_date?: Date
     review_status: boolean
@@ -64,6 +69,8 @@ export interface RentsAttributes {
     room_two: string
     room_three: string
     room_estar: string
+    car: boolean
+    car_plate: string
 }
 
 export interface UserAttributes {
@@ -88,4 +95,9 @@ export interface PriceAttributes {
     price_per_night: number
     start_date: Date
     end_date: Date
+}
+
+export interface DiscountsAttributes {
+    id_discount: number
+    discount_type: string
 }

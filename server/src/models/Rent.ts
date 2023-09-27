@@ -34,6 +34,10 @@ const Rent = (sequelize: Sequelize) => {
             type:DataTypes.STRING,
             allowNull: false,
         },
+        cuit_dni: {
+            type:DataTypes.STRING,
+            allowNull: false,
+        },
         id_apartment: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -48,6 +52,10 @@ const Rent = (sequelize: Sequelize) => {
         },
         end_date: {
             type: DataTypes.DATEONLY,
+            allowNull: false
+        },
+        nights_number: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         guests_number: {
@@ -66,7 +74,35 @@ const Rent = (sequelize: Sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        amount: {
+        pets: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        currency: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        total_amount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        deposit: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        exchange_rate: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        deposit_amount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        balance_exchange_rate: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        balance: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -74,24 +110,8 @@ const Rent = (sequelize: Sequelize) => {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        total_amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        senia: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        senia_amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        saldo: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
         payment_status: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         },
         payment_date: {
@@ -130,6 +150,14 @@ const Rent = (sequelize: Sequelize) => {
             allowNull: false
         },
         room_estar: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        car: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        car_plate: {
             type: DataTypes.STRING,
             allowNull: false
         },

@@ -6,6 +6,7 @@ import Apartment from "./models/Apartment";
 import Rent from "./models/Rent";
 import Service from "./models/Service";
 import Price from "./models/Price";
+import Discount from "./models/Discounts";
 
 const sequelize: any = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/bustillos7500`, {
     logging: false, 
@@ -17,15 +18,17 @@ Apartment(sequelize);
 Rent(sequelize);
 Service(sequelize);
 Price(sequelize);
+Discount(sequelize);
 
-const { Users, Apartments, Rents, Services, Prices } = sequelize.models;
+const { Users, Apartments, Rents, Services, Prices, Discounts } = sequelize.models;
 
 Users.hasMany(Rents, { foreignKey: "id_user" });
 Services.belongsToMany(Apartments, { through: "Apartments_Services" });
 Apartments.belongsToMany(Services, { through: "Apartments_Services" });
 Apartments.hasMany(Rents, { foreignKey: 'id_apartment' }); 
 Rents.belongsTo(Users, { foreignKey: 'id_user' });
-Rents.belongsTo(Apartments, { foreignKey: 'id_apartment' }); 
+Rents.belongsTo(Apartments, { foreignKey: 'id_apartment' });
+Discounts.belongsToMany(Rents, { through: "Rents_Discounts" }); 
 
 //faltan las relaciones con la tabla price
 
