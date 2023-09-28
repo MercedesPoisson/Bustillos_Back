@@ -6,7 +6,7 @@ const PORT = 3001;
 
 async function startServer() {
   try {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
     console.log('Database synchronized');
 
     await createServices(); 

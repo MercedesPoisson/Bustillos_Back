@@ -8,7 +8,8 @@ const Price = (sequelize: Sequelize) => {
     sequelize.define<PriceInstance>("Prices", {
         id_price: {
             primaryKey: true,
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
             allowNull: false
         },
         id_apartment: {
