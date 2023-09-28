@@ -95,6 +95,7 @@ export interface PriceAttributes {
     price_per_night: number
     start_date: Date
     end_date: Date
+    currency: string
 }
 
 export interface DiscountsAttributes {

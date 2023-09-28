@@ -38,6 +38,10 @@ const Price = (sequelize: Sequelize) => {
             type: DataTypes.DATEONLY,
             allowNull: false
         },
+        currency: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
     })
 }
 
