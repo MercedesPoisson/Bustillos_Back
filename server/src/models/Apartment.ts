@@ -62,10 +62,10 @@ const Apartment = (sequelize: Sequelize) => {
             type: DataTypes.STRING(1000),
             allowNull: false
         },
-        price_per_night: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
+        // price_per_night: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // },
         images: {
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false

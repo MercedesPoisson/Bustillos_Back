@@ -14,7 +14,7 @@ export interface ApartmentsAttributes {
     estar_bed: string
     property_type: string
     description: string
-    price_per_night: number
+    // price_per_night: number
     images: string[]
     // rating?: number
     is_active: boolean
@@ -90,12 +90,15 @@ export interface UserAttributes {
 export interface PriceAttributes {
     id_price: number
     id_apartment: number
-    key_word: string
-    guests_number: number
-    price_per_night: number
-    start_date: Date
-    end_date: Date
-    currency: string
+    title: string
+    // key_word: string
+    // guests_number: number
+    price_per_night_pesos: number
+    price_per_night_dolar: number
+    // start_date: Date
+    // end_date: Date
+    season: string
+    // currency: string
 }
 
 export interface DiscountsAttributes {

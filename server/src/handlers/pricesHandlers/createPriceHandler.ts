@@ -6,12 +6,14 @@ const createPriceHandler = async (req: Request, res: Response) => {
     const priceArray: string[] = [
     "id_price",
     "id_apartment",
-    "key_word",
-    "guests_number",
-    "price_per_night",
-    "start_date",
-    "end_date",
-    "currency",
+    // "key_word",
+    // "guests_number",
+    "price_per_night_pesos",
+    "price_per_night_dolar",
+    // "start_date",
+    // "end_date",
+    // "currency",
+    "season",
     ]
     const newPrice = req.body as PriceAttributes;
     try {

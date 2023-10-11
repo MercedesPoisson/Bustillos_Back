@@ -19,30 +19,42 @@ const Price = (sequelize: Sequelize) => {
                 key: "id_apartment"
             }
         },
-        key_word: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        guests_number: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        price_per_night: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        start_date: {
-            type: DataTypes.DATEONLY, 
-            allowNull: false
-        },
-        end_date: {
-            type: DataTypes.DATEONLY,
-            allowNull: false
-        },
-        currency: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false
         },
+        // key_word: {
+        //     type: DataTypes.STRING,
+        //     allowNull: true
+        // },
+        // guests_number: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // },
+        price_per_night_pesos: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        price_per_night_dolar: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        season: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        // start_date: {
+        //     type: DataTypes.DATEONLY, 
+        //     allowNull: false
+        // },
+        // end_date: {
+        //     type: DataTypes.DATEONLY,
+        //     allowNull: false
+        // },
+        // currency: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
     })
 }
 

@@ -21,7 +21,7 @@ const createAppHandler = async(req: Request, res: Response) => {
         "estar_bed",
         "property_type",
         "description",
-        "price_per_night",
+        // "price_per_night",
         // "images",
         // "rating",
         "is_active",
