@@ -71,6 +71,7 @@ export interface RentsAttributes {
     room_estar: string
     car: boolean
     car_plate: string
+    booking_number: string
 }
 
 export interface UserAttributes {
@@ -104,4 +105,11 @@ export interface PriceAttributes {
 export interface DiscountsAttributes {
     id_discount: number
     discount_type: string
+}
+
+export interface GuestsAttributes {
+    pax_name: string
+    pax_surname: string
+    pax_dni: string
+    id_rent: number
 }

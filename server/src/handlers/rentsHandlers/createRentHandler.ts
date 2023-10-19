@@ -42,6 +42,7 @@ const createRentHandler = async (req: Request, res: Response) => {
     "room_estar",
     "car",
     "car_plate",
+    "booking_number",
 ];
 try {
     const rentData = req.body;

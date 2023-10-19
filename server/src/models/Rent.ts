@@ -161,6 +161,10 @@ const Rent = (sequelize: Sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        booking_number: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
     })
 }
 export default Rent;

@@ -7,6 +7,7 @@ import Rent from "./models/Rent";
 import Service from "./models/Service";
 import Price from "./models/Price";
 import Discount from "./models/Discounts";
+import Guest from "./models/Guests";
 
 const sequelize: any = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/bustillos7500`, {
     logging: false, 
@@ -19,8 +20,9 @@ Rent(sequelize);
 Service(sequelize);
 Price(sequelize);
 Discount(sequelize);
+Guest(sequelize);
 
-const { Users, Apartments, Rents, Services, Prices, Discounts } = sequelize.models;
+const { Users, Apartments, Rents, Services, Prices, Discounts, Guests } = sequelize.models;
 
 Users.hasMany(Rents, { foreignKey: "id_user" });
 Services.belongsToMany(Apartments, { through: "Apartments_Services" });
@@ -40,4 +42,5 @@ Prices.belongsTo(Apartments, { foreignKey: 'apartment_id' });
 Rents.hasMany(Prices, { foreignKey: 'rent_id' });
 Prices.belongsTo(Rents, { foreignKey: 'rent_id' });
 
+Rents.hasMany(Guests, { foreignKey: 'rent_id' });
 export default sequelize;
