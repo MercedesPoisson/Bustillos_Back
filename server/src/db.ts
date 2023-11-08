@@ -42,5 +42,5 @@ Prices.belongsTo(Apartments, { foreignKey: 'apartment_id' });
 Rents.hasMany(Prices, { foreignKey: 'rent_id' });
 Prices.belongsTo(Rents, { foreignKey: 'rent_id' });
 
-Rents.hasMany(Guests, { foreignKey: 'rent_id' });
+Rents.hasMany(Guests, { foreignKey: 'id_rent' });
 export default sequelize;

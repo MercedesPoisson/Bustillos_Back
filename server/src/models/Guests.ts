@@ -5,6 +5,12 @@ interface GuestsInstance extends Model<GuestsAttributes>, GuestsAttributes {}
 
 const Guest = (sequelize: Sequelize) => {
   return sequelize.define<GuestsInstance>("Guests", {
+    id_guest: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+        },
     pax_name: {
       type: DataTypes.STRING,
       allowNull: false,

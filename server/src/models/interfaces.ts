@@ -108,6 +108,7 @@ export interface DiscountsAttributes {
 }
 
 export interface GuestsAttributes {
+    id_guest: number
     pax_name: string
     pax_surname: string
     pax_dni: string
