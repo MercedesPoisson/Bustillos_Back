@@ -5,6 +5,6 @@ import getAllGuestsHandler from "../../handlers/GuestsHandlers/getAllGuestsHandl
 const guestRoutes = Router();
 
 guestRoutes.post("/", createGuestHandler);
-guestRoutes.get("/", getAllGuestsHandler);
+guestRoutes.get("/:id_rent", getAllGuestsHandler);
 
 export default guestRoutes;

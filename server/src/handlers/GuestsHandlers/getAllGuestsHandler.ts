@@ -3,7 +3,8 @@ import getAllGuestsController from "../../controllers/guestControllers/getAllGue
 
 const getAllGuestsHandler = async (req: Request, res: Response) => {
     try {
-        const guests = await getAllGuestsController();
+        const { id_rent } = req.params;
+        const guests = await getAllGuestsController(id_rent);
         res.json(guests);
     } catch (error) {
         console.error(error);
