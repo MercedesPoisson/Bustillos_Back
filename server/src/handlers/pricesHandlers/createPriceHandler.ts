@@ -17,13 +17,18 @@ const createPriceHandler = async (req: Request, res: Response) => {
     ]
     const newPrice = req.body as PriceAttributes;
     try {
-        const response = await createPriceController(newPrice)
-        res.json(response);
+        const response = await createPriceController(newPrice);
+
+        if (response.success) {
+            res.status(201).json(response.data); // 201: Created
+        } else {
+            res.status(400).json({ error: response.error }); // 400: Bad Request
+        }
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: "Error al crear el precio" });
+        res.status(500).json({ error: "Error interno del servidor." }); // 500: Internal Server Error
     }
-}   
+};
 
 export default createPriceHandler;
 
